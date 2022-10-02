@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Title: ViewModifier {
+struct TitleModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.largeTitle)
@@ -16,15 +16,15 @@ struct Title: ViewModifier {
 }
 
 extension View {
-    func titleStyle() -> some View {
-        modifier(Title())
+    func title() -> some View {
+        modifier(TitleModifier())
     }
 }
 
 struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
-            .titleStyle()
+            .title()
     }
 }
 
